@@ -1,0 +1,13 @@
+[Unit]
+Description=Service Monitor
+
+[Service]
+ExecStart=/usr/bin/python3 /home/ender/Documents/code/check_service/monitor_services.py
+Restart=never
+User=ender
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=service_monitor
+
+[Install]
+WantedBy=multi-user.target
